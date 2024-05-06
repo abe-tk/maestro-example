@@ -38,9 +38,12 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: const InputDecoration(
                   labelText: 'UserName',
                 ),
+                onChanged: (value) => setState(() {
+                  userNameController.text = value;
+                }),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter some text';
+                    return 'Please enter some userName text';
                   }
                   return null;
                 },
@@ -54,9 +57,12 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: const InputDecoration(
                   labelText: 'Password',
                 ),
+                onChanged: (value) => setState(() {
+                  passwordController.text = value;
+                }),
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return 'Please enter some text';
+                    return 'Please enter some password text';
                   }
                   if (value.length < 8) {
                     return 'Password must be at least 8 characters';
@@ -71,25 +77,25 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () async {
                   // キーボードを閉じる
                   _unfocusKeyboard();
-
+              
                   if (_formKey.currentState!.validate()) {
                     // ローディングダイアログを表示
                     AppCircleLoadingDialog.show(context: context);
-
+              
                     // 非同期処理で3秒待つ
                     await Future.delayed(const Duration(seconds: 3));
-
+              
                     if (context.mounted) {
                       // ローディングダイアログを閉じる
                       Navigator.of(context).pop();
-
+              
                       // ホーム画面に遷移
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const HomePage()),
                       );
-
+              
                       // 入力欄をクリア
                       userNameController.clear();
                       passwordController.clear();
