@@ -1,5 +1,4 @@
 appId: com.maestroex.app
 ---
 # 「MaestroEx」を起動
-- tapOn:
-    id: MaestroEx
+- launchApp

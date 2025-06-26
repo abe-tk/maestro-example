@@ -1,0 +1,34 @@
+appId: com.maestroex.app
+---
+- tapOn: "Login"
+
+- assertVisible:
+      text: "Please enter some userName text"
+      enabled: true
+
+- assertVisible:
+      text: "Please enter some password text"
+      enabled: true
+
+- takeScreenshot: 01_LoginPage_ValidateUserNameAndPassword
+
+- tapOn: "UserName"
+- inputText: "user"
+
+- tapOn: "Password"
+- inputText: "pass"
+
+- tapOn: "Login"
+
+- takeScreenshot: 02_LoginPage_ValidatePasswordLength
+
+- assertVisible:
+      text: "Password must be at least 8 characters"
+      enabled: true
+
+- tapOn: "Password"
+- inputText: "word"
+
+- tapOn: "Login"
+
+- takeScreenshot: 03_HomePage

@@ -1,16 +1,13 @@
-# app
+# 概要
 
-A new Flutter project.
+[Maestro](https://maestro.mobile.dev/)のハンズオンプロジェクト
 
-## Getting Started
+## テストの実行
 
-This project is a starting point for a Flutter application.
+1. change directory
 
-A few resources to get you started if this is your first Flutter project:
+    `cd test/maestro/evidence`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. flowの実行
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    `maestro test ../login_flow.yaml`
